@@ -3,7 +3,55 @@ title: "System"
 date: 2018-12-09T23:10:04+09:00
 draft: true
 ---
+## Soft Links and Hard Links
+#### to create soft links
 
+> ln -s *target* *link-name*
+
+## Settings Time 
+
+### Timezone
+
+* use **tzdata** package to manage timezone
+
+* to modify it can use 
+
+> dpkg-reconfigure tzdata
+
+* the configuration is stored in `/etc/timezone`
+
+* the file from `/usr/share/zoneinfo` also copied to `/etc/localtime`
+
+* if you want to change it temporarily use `$TZ` enviroment variable
+
+#### Show Clock
+
+> date 
+
+
+#### Setup Hardware clock
+
+> hwclock
+
+set hardware clock to system clock
+
+> hwclock --set --systohc
+
+### Time Sync
+
+* Use **NTP** to sync time across networks
+
+for Client 
+
+1. install **ntpdate** package
+
+2. change the ntp server in `/etc/default/ntpdate`
+
+for Server
+
+1. local ntp server are provided by **ntp** package
+
+2. edit the `/etc/ntp.conf` 
 
 ## Settings system locale
 especially the date, monetary,currency
