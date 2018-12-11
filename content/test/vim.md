@@ -6,11 +6,12 @@ draft: true
 
 # vim tip and tricks
 
-
 ## scroll simultenously
+
 to scroll windows simultenously use
 
 > :set scrollbind
+
 > :set scb [!] # for boolean on/off
 
 

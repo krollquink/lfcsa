@@ -3,64 +3,81 @@ title: "User_group"
 date: 2018-12-10T00:08:39+09:00
 draft: true
 ---
+# User and Group Manipulation
 
 ## User n Group Database
 user database is stored in `/etc/passwd`
 for encrypted password is stored in `/etc/shadow`
 
-## /etc/passwd file
+#### /etc/passwd file
 ```
 john:x:1001:1002:john,,,:/home/john:/bin/bash 
 ```
-
 put `/bin/false` to prevent the user from login 
 
-# passwd
+### passwd
+
 change expire date to make user need to change the pass
+
 > passwd -e *user*
 
-## /etc/shadow file
+#### /etc/shadow file
 the file where encrypted password is stored
 ```
 micheal:$6$f0bfO.Db$G.vj5ehlXiaSEp7L8Pp1MNfyBk3oluzica9CoJngiUIw
 52YEBG0hRbvBaezvum7AHzv./It14jVbFNn3IYl860:17875:0:99999:7:::   
 ```
 
-## /etc/group file
-containe the group databese
+#### /etc/group file
+contain the group databese
 ```
 micheal:x:1003: 
 ```
 
 ## Modifying USER Command
-create User
+
+#### create User
+
 > adduser *user*
+
 template for new user can be edited in `/etc/adduser.conf`
 
 
-change pass
+#### change pass
+
 > passwd *user*
 
-change full name and to comment other
+#### change full name and to comment other
+
 > chfn *user*
+
 after using `chfn` the use `/etc/passwd` will change to below
 ```
 john:x:1002:1002:John Academian,123,080-1111-1111,080-2222-2222,coworker:/home/john:/bin/bash               
 ```
 
-list of available shell
+#### list of available shell
+
 > /etc/shells <--edit this file to enable/disable shell
-change default shell
+
+#### change default shell
+
 > chsh /bin/bash
 
-change expire date of account
+#### change expire date of account
+
 > chage 
-show current user settings
+
+#### show current user settings
+
 > change -l *user*
 
-disabling an account(locking an account)
+#### disabling an account(locking an account)
+
 > passwd -l *user*
-enabling an account(unlock)
+
+#### enabling an account(unlock)
+
 > passwd -u *user*
 
 
@@ -68,39 +85,49 @@ enabling an account(unlock)
 user will create a group which is their "main group"
 this group is created during user creation
 
-to  change main group
+#### to  change main group
+
 > newgrp
 
 **setgid** can be set on directory which cause the file created in that directory
 to automatically belong to the group
 
-add group
-> addgroup
+#### adding group
 
-deletegroup
-> delgroup
+> addgroup *group*
 
-modify group
-> groupmod 
+#### delete a group
 
-change group passwd
+> delgroup *group*
+
+#### modify group
+
+> groupmod *group*
+
+#### change group passwd
+
 > gpasswd *group*
+
 > passwd -g *group*
 
-delete group passwd
+#### delete group passwd
+
 > passwd -r -g *group*
 
-## Check database of user using `getent`
+#### Check database of user using `getent`
+
 > getent passwd *user*
 
 
 ## Shell environment 
-`bash` = standard shell 
-`/etc/bash.bashrc` for **"interactive shell"** >> shell such as **xterm**
+
+`bash` = standard shell  
+`/etc/bash.bashrc` for **"interactive shell"** >> shell such as **xterm**  
 `/etc/profile` for **"login shell"** >> shell that are use during login or via ssh or when using `bash --login`
 
-autocomplete in bash
+## Autocomplete in bash
 can be enable by uncommenting file in `/etc/bash.bashrc`
 
 ## Environment
+
 global enviroment is stored in `/etc/enviroment`
