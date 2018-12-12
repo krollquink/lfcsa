@@ -1,7 +1,9 @@
-#    Essential Commands – 25%                   # 
+# = finish
+@ = need to be tested
+    Essential Commands – 25%                   # 
     Operation of Running Systems – 20%
-#    User and Group Management – 10%			   #
-#    Networking – 12%			  			   #
+    User and Group Management – 10%			   #
+    Networking – 12%			  			   #
     Service Configuration – 20%
     Storage Management – 13%
 
@@ -18,7 +20,7 @@ Essential Commands – 25%
     Create and manage hard and soft links
     List, set, and change standard file permissions
 #    Read, and use system documentation
-    Manage access to the root account
+#    Manage access to the root account
 
 Operation of Running Systems – 20%
 
@@ -43,7 +45,7 @@ User and Group Management – 10%
 
 #    Create, delete, and modify local user accounts
 #    Create, delete, and modify local groups and group memberships
-    Manage system-wide environment profiles
+#    Manage system-wide environment profiles
 #    Manage template user environment
     Configure user resource limits
     Manage user privileges
@@ -56,7 +58,7 @@ Networking – 12%
     Implement packet filtering
     Start, stop, and check the status of network services
     Statically route IP traffic
-    Synchronize time using other network peers
+@    Synchronize time using other network peers
 
 Service Configuration – 20%
 
@@ -79,10 +81,10 @@ Storage Management – 13%
     List, create, delete, and modify physical storage partitions
     Manage and configure LVM storage
     Create and configure encrypted storage
-    Configure systems to mount file systems at or during boot
+#    Configure systems to mount file systems at or during boot
     Configure and manage swap space
     Create and manage RAID devices
-    Configure systems to mount file systems on demand
+@    Configure systems to mount file systems on demand
     Create, manage and diagnose advanced file system permissions
     Setup user and group disk quotas for filesystems
     Create and configure file systems

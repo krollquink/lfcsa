@@ -18,23 +18,6 @@ Example:
 
 > /dev/sdb3 --> second disk third partition
 
-## Disk Partition
-
-### MSDOS partition type
-
-* this type of partition consist only 4 "primary" partitions
-
-* ---> need to use "extended" partitions to make secondary partitions and the numbered  from 5
-
-> /dev/sda5 --> first disk secondary partitions
-
-* this partition table only can hold 2Tib size.....
-
-### GPT partition type
-
-* allow up to 128 partitions
-
-* size max up to 8ZiB = around 8TB
 
 ## GRUB 2 Configuration
 
@@ -68,5 +51,13 @@ Example:
 
 ## Identifying disk `/dev` or /udev
 
+* You can identify the disk named by `udev` in `/dev/disk/by-id/`
+```
+johntravolta:/dev/disk/by-id# ls -l
+total 0
+lrwxrwxrwx 1 root root  9 23 jul. 08:58 ata-STM3500418AS_9VM3L3KP -> ../../sda
+lrwxrwxrwx 1 root root 10 23 jul. 08:58 ata-STM3500418AS_9VM3L3KP-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 23 jul. 08:58 ata-STM3500418AS_9VM3L3KP-part2 -> ../../sda2
+```
 
 

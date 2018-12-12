@@ -65,23 +65,6 @@ can also be used to search for a package name
 
 > apt-cache search vim
 
-## ALl about `tar`!!
-
-> -t = test label 
-
-> tar -czvf <file.tar.gz> <directory>
-
-## ALl about `zip`!!
-
-#### bzip2
-
-> zip **-Z bzip2** tar.bzip2 /tar 
-
-#### for directory
-
-> zip **-r** -Z bzip2 tar.bzip2 /tar 
-
-#### `ar` package manager
 
 #### `aprox` debian cache proxy for debian cache package
 

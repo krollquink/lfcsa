@@ -119,15 +119,20 @@ to automatically belong to the group
 > getent passwd *user*
 
 
-## Shell environment 
 
-`bash` = standard shell  
-`/etc/bash.bashrc` for **"interactive shell"** >> shell such as **xterm**  
-`/etc/profile` for **"login shell"** >> shell that are use during login or via ssh or when using `bash --login`
+## Sharing Administrator Rights
 
-## Autocomplete in bash
-can be enable by uncommenting file in `/etc/bash.bashrc`
+change the `/etc/sudoers` to edit admin rights
 
-## Environment
+#### use below command to edit `/etc/sudoers` 
 
-global enviroment is stored in `/etc/enviroment`
+> visudo 
+
+#### To make a user to use `sudo` without pasword add this to `visuo`
+
+>  john ALL= NOPASSWD: ALL
+
+**dont forget to put this command on the last line !!!**
+
+for more complex configuration please refer `man sudoers`
+

@@ -87,4 +87,22 @@ change file encoding
 
 > convmv  -r -f [fileenco] -t [dest encoding [file name/or dir with -r]]
 
+## Shell environment 
+
+`bash` = standard shell  
+`/etc/bash.bashrc` for **"interactive shell"** >> shell such as **xterm**  
+`/etc/profile` for **"login shell"** >> shell that are use during login or via ssh or when using `bash --login`
+
+## Autocomplete in bash
+can be enable by uncommenting file in `/etc/bash.bashrc`
+
+## Environment
+
+global enviroment is stored in `/etc/enviroment`
+
+* to change default editor in debian 
+
+> udapte-alternatives --config editor
+
+
 
