@@ -36,19 +36,19 @@ we can partition a disk using `fdisk` or `parted`
 
 #### to manually mount a device 
 
-> mount -t *devicetype* *device(/dev)* *target dir*
+	 mount -t *devicetype* *device(/dev)* *target dir*
 
 Example:
 to mount `/dev/sdb` ext3 filesystem to `/mnt/tmp`
 
-> mount -t ext3 /dev/sdb /mnt/tmp
+	 mount -t ext3 /dev/sdb /mnt/tmp
 
 #### to manually unmount a device
 
-> umount *target*
+	 umount *target*
 
 
-### Mount A device automatically
+### Mount a device automatically
 
 * To mount device both automatically and manually, we need to edit `/etc/fstab` file
 
@@ -69,6 +69,7 @@ UUID=ee880013-0f63-4251-b5c6-b771f53bd90e none swap sw  0       0
 /dev/fd0        /media/floppy   auto    rw,user,noauto  0       0
 arrakis:/shared /shared         nfs     defaults        0       0
 ```
+
 #### some of `/etc/fstab` **options**
 
 * defaults = 
@@ -79,33 +80,91 @@ arrakis:/shared /shared         nfs     defaults        0       0
 1. Setup a disk
 
 2. Check the disk kernel name using `fdisk` or `parted`
-```
-$ fdisk -l
-khai@ubuntusv1:~/new_mount$ sudo fdisk -l                                     
-Disk /dev/sda: 16 GiB, 17179869184 bytes, 33554432 sectors                    
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes                         
-I/O size (minimum/optimal): 512 bytes / 512 bytes                             
-Disklabel type: dos
-Disk identifier: 0x63f1cd60
 
-Device     Boot    Start      End  Sectors  Size Id Type                      
-/dev/sda1  *        2048 15624191 15622144  7.5G 83 Linux                     
-/dev/sda5       32507904 33552383  1044480  510M 82 Linux swap / Solaris      
-Partition table entries are not in disk order.                                
+	```
+	$ fdisk -l
+	khai@ubuntusv1:~/new_mount$ sudo fdisk -l                                     
+	Disk /dev/sda: 16 GiB, 17179869184 bytes, 33554432 sectors                    
+	Units: sectors of 1 * 512 = 512 bytes
+	Sector size (logical/physical): 512 bytes / 512 bytes                         
+	I/O size (minimum/optimal): 512 bytes / 512 bytes                             
+	Disklabel type: dos
+	Disk identifier: 0x63f1cd60
 
-Disk /dev/sdb: 2 GiB, 2147483648 bytes, 4194304 sectors                       
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes                         
-I/O size (minimum/optimal): 512 bytes / 512 bytes                             
+	Device     Boot    Start      End  Sectors  Size Id Type                      
+	/dev/sda1  *        2048 15624191 15622144  7.5G 83 Linux                     
+	/dev/sda5       32507904 33552383  1044480  510M 82 Linux swap / Solaris      
+	Partition table entries are not in disk order.                                
 
-```
+	Disk /dev/sdb: 2 GiB, 2147483648 bytes, 4194304 sectors                       
+	Units: sectors of 1 * 512 = 512 bytes
+	Sector size (logical/physical): 512 bytes / 512 bytes                         
+	I/O size (minimum/optimal): 512 bytes / 512 bytes                             
+
+	```  
+
 3. Start partitioning
 
-> fdisk */dev/sdb*
 
-> parted */dev/sdb*
+	> fdisk */dev/sdb*
 
+	> parted */dev/sdb*
 
+	make sure to use percent for parted
+
+	first change the unit
+
+	> unit s
+
+	start partitioning
+
+	> mklabel gpt
+
+	> mkpart 
+
+	> then use 0% to %100
+
+4. Make a filesystem in the partition
+
+	use any filesystem format ,usually we use ext4
+
+	> mkfs -t ext4 */dev/sdb1*
+
+	or
+
+	> mkfs.ext4 */dev/sdb1*
+
+5. Make mount point
+
+	make a new dir
+	
+	> mkdir *dir*
+
+	change the ownership of the directory
+
+	> chmod -R *user*:*user_group* *dir*
+
+	mount the file
+
+	> mount -t *filesystemtype* *device name* *mount_point*
+
+	> mount -t ext4 /dev/sdb1 /home/john/Art
+
+6. To make the file automatically mount during boot change `/etc/fstab`
+
+	```  
+	# /etc/fstab: static file system information.
+	#
+	# Use 'blkid' to print the universally unique identifier for a
+	# device; this may be used with UUID= as a more robust way to name devices
+	# that works even if disks are added and removed. See fstab(5).
+	#
+	# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+	/dev/mapper/khaianna--vg-root /               ext4    errors=remount-ro 0       1
+	# /boot was on /dev/sda1 during installation
+	UUID=35eb37d5-6c22-4fc4-8ab8-2b054802d677 /boot           ext2    defaults        0    	2
+	/dev/sdb1 /home/john/Art           ext4    default		0		2
+	/dev/mapper/khaianna--vg-swap_1 none            swap    sw              0       0
+	```
 
 
