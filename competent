@@ -10,15 +10,15 @@
 Essential Commands – 25%
 
 #    Log into local & remote graphical and text mode consoles   				#
-    Search for files
-    Evaluate and compare the basic file system features and options
-    Compare and manipulate file content
-    Use input-output redirection (e.g. >, >>, |, 2>)
+@    Search for files
+@    Evaluate and compare the basic file system features and options
+@    Compare and manipulate file content
+@    Use input-output redirection (e.g. >, >>, |, 2>)
 #    Analyze text using basic regular expressions
 #    Archive, backup, compress, unpack, and uncompress files
 #    Create, delete, copy, and move files and directories
-    Create and manage hard and soft links
-    List, set, and change standard file permissions
+@    Create and manage hard and soft links
+@    List, set, and change standard file permissions
 #    Read, and use system documentation
 #    Manage access to the root account
 
@@ -51,14 +51,17 @@ User and Group Management – 10%
     Manage user privileges
     Configure PAM
 
-Networking – 12%
+Networking – 12% need to change to netplan
 
 #    Configure networking and hostname resolution statically or dynamically
+#	need to change to netplan
 #    Configure network services to start automatically at boot
+#	need to change to netplan
     Implement packet filtering
     Start, stop, and check the status of network services
-    Statically route IP traffic
+#    Statically route IP traffic
 @    Synchronize time using other network peers
+	change to chrony
 
 Service Configuration – 20%
 
@@ -78,15 +81,15 @@ Service Configuration – 20%
 
 Storage Management – 13%
 
-    List, create, delete, and modify physical storage partitions
+#    List, create, delete, and modify physical storage partitions
     Manage and configure LVM storage
     Create and configure encrypted storage
 #    Configure systems to mount file systems at or during boot
     Configure and manage swap space
     Create and manage RAID devices
-@    Configure systems to mount file systems on demand
+#    Configure systems to mount file systems on demand
     Create, manage and diagnose advanced file system permissions
     Setup user and group disk quotas for filesystems
-    Create and configure file systems
+#    Create and configure file systems
 
 

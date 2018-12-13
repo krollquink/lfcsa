@@ -10,9 +10,22 @@ draft: true
 
 * can limit security problem
 
+
+
+
 ### Prerequisites
 
 need to install `build-essential` , `libncurses5-dev` , `fakeroot`
+
+1. Find the kernel source
+
+	> apt-cache ^linux-source
+
+2. Install the source using `apt`
+
+	> sudo apt install
+
+	
 
 
 

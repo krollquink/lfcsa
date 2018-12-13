@@ -39,6 +39,8 @@ set hardware clock to system clock
 
 ### Time Sync
 
+#### use `ntpd` package
+
 * Use **NTP** to sync time across networks
 
 for Client 
@@ -52,6 +54,13 @@ for Server
 1. local ntp server are provided by **ntp** package
 
 2. edit the `/etc/ntp.conf` 
+
+#### use `chrony` package to maintain time (Ubuntu)
+
+1. install `chrony`
+	> sudo apt install chrony
+
+
 
 ## Settings system locale
 especially the date, monetary,currency
