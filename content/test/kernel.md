@@ -19,11 +19,20 @@ need to install `build-essential` , `libncurses5-dev` , `fakeroot`
 
 1. Find the kernel source
 
-	> apt-cache ^linux-source
+		apt-cache ^linux-source
 
 2. Install the source using `apt`
 
-	> sudo apt install
+		sudo apt install
+
+3. Copy the `config` file
+
+		cp /boot/config-3.16.0-4-amd64 ~/kernel/linux-source-3.16/.config
+
+4. 
+
+
+# Changing Kernel Parameter
 
 	
 

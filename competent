@@ -48,7 +48,7 @@ User and Group Management – 10%
 #    Manage system-wide environment profiles
 #    Manage template user environment
     Configure user resource limits
-    Manage user privileges
+#    Manage user privileges
     Configure PAM
 
 Networking – 12% need to change to netplan
@@ -58,10 +58,10 @@ Networking – 12% need to change to netplan
 #    Configure network services to start automatically at boot
 #	need to change to netplan
     Implement packet filtering
-    Start, stop, and check the status of network services
+#    Start, stop, and check the status of network services
 #    Statically route IP traffic
-@    Synchronize time using other network peers
-	change to chrony
+#    Synchronize time using other network peers
+#	change to chrony
 
 Service Configuration – 20%
 
@@ -88,7 +88,7 @@ Storage Management – 13%
     Configure and manage swap space
     Create and manage RAID devices
 #    Configure systems to mount file systems on demand
-    Create, manage and diagnose advanced file system permissions
+#    Create, manage and diagnose advanced file system permissions
     Setup user and group disk quotas for filesystems
 #    Create and configure file systems
 

@@ -13,7 +13,7 @@ draft: true
 
 * ---> need to use "extended" partitions to make secondary partitions and the numbered  from 5
 
-> /dev/sda5 --> first disk secondary partitions
+	/dev/sda5 --> first disk secondary partitions
 
 * this partition table only can hold 2Tib size.....
 
@@ -106,49 +106,49 @@ arrakis:/shared /shared         nfs     defaults        0       0
 3. Start partitioning
 
 
-	> fdisk */dev/sdb*
-
-	> parted */dev/sdb*
+		fdisk */dev/sdb*
+			or
+		parted */dev/sdb*
 
 	make sure to use percent for parted
 
 	first change the unit
 
-	> unit s
+		 unit s
 
 	start partitioning
 
-	> mklabel gpt
+		mklabel gpt
 
-	> mkpart 
+		mkpart 
 
-	> then use 0% to %100
+		then use 0% to %100
 
 4. Make a filesystem in the partition
 
 	use any filesystem format ,usually we use ext4
 
-	> mkfs -t ext4 */dev/sdb1*
+		mkfs -t ext4 */dev/sdb1*
 
 	or
 
-	> mkfs.ext4 */dev/sdb1*
+		mkfs.ext4 */dev/sdb1*
 
 5. Make mount point
 
 	make a new dir
 	
-	> mkdir *dir*
+		mkdir *dir*
 
 	change the ownership of the directory
 
-	> chmod -R *user*:*user_group* *dir*
+		chmod -R *user*:*user_group* *dir*
 
 	mount the file
 
-	> mount -t *filesystemtype* *device name* *mount_point*
+		mount -t *filesystemtype* *device name* *mount_point*
 
-	> mount -t ext4 /dev/sdb1 /home/john/Art
+		mount -t ext4 /dev/sdb1 /home/john/Art
 
 6. To make the file automatically mount during boot change `/etc/fstab`
 
