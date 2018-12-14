@@ -55,7 +55,7 @@ this file is relevant for executable file using the user or the group
 
 this mask make a default permission for a file or directory when it created
 
-	umask 002 will produce file with permission 664 and directory with permission 775
+`umask 002` will produce **file with permission 664** and **directory with permission 775**
 
 
 ### Changing File attributes
@@ -64,8 +64,8 @@ to change file attr
 
 * immutable = file cannot be change or deleted
 
-	chattr +i *file*
+		chattr +i *file*
 
 * append only = file only can be append
 
-	chattr +a *file*
+		chattr +a *file*
