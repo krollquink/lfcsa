@@ -17,8 +17,8 @@ Essential Commands – 25%
 #    Analyze text using basic regular expressions
 #    Archive, backup, compress, unpack, and uncompress files
 #    Create, delete, copy, and move files and directories
-@    Create and manage hard and soft links
-@    List, set, and change standard file permissions
+#    Create and manage hard and soft links
+#    List, set, and change standard file permissions
 #    Read, and use system documentation
 #    Manage access to the root account
 
@@ -29,8 +29,8 @@ Operation of Running Systems – 20%
     Install, configure and troubleshoot bootloaders
     Diagnose and manage processes
     Locate and analyze system log files
-    Schedule tasks to run at a set date and time
-    Verify completion of scheduled jobs
+#    Schedule tasks to run at a set date and time
+#    Verify completion of scheduled jobs
 #    Update software to provide required functionality and security
     Verify the integrity and availability of resources
     Verify the integrity and availability of key processes
@@ -65,18 +65,18 @@ Networking – 12% need to change to netplan
 
 Service Configuration – 20%
 
-    Configure a caching DNS server
-    Maintain a DNS zone
+#    Configure a caching DNS server
+#    Maintain a DNS zone
     Configure email aliases
     Configure SSH servers and clients
-    Restrict access to the HTTP proxy server
+    Restrict access to the HTTP proxy server (squid)
     Configure an IMAP and IMAPS service
     Query and modify the behavior of system services at various operating modes
-    Configure an HTTP server
-    Configure HTTP server log files
+#    Configure an HTTP server
+#    Configure HTTP server log files
     Configure a database server
-    Restrict access to a web page
-    Manage and configure containers
+#    Restrict access to a web page
+@    Manage and configure containers
     Manage and configure Virtual Machines
 
 Storage Management – 13%
@@ -89,7 +89,7 @@ Storage Management – 13%
     Create and manage RAID devices
 #    Configure systems to mount file systems on demand
 #    Create, manage and diagnose advanced file system permissions
-    Setup user and group disk quotas for filesystems
+#    Setup user and group disk quotas for filesystems
 #    Create and configure file systems
 
 
