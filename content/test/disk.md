@@ -167,4 +167,44 @@ arrakis:/shared /shared         nfs     defaults        0       0
 	/dev/mapper/khaianna--vg-swap_1 none            swap    sw              0       0
 	```
 
+## Swap file or Swap partition
 
+Space used when memory is fully utilized
+
+### Swap partition
+
+create the partition using `fdisk` or `parted`
+
+### Swap file
+
+#### Create swap file using `dd`
+
+dd is better!
+
+	dd if=/dev/zero of=/mnt/swapfile bs=1024 count=2097152
+
+	fallocate --length 2Gib /mnt/swp
+
+------
+
+#### make swap filesystem
+
+	mkswap /mnt/swap
+
+#### enable the swap 
+
+	swapon /mnt/swap
+
+#### add the swap file to `/etc/fstab` to enabled in on reboot
+
+	/mnt/swap none swap sw 0 0  
+
+#### change kernel swap utilization
+	
+the higher the number the higher the utilization
+
+	vm.swappiness=60
+
+#### disable the swap 
+
+	swapoff /mnt/swap
