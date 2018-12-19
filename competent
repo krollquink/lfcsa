@@ -24,11 +24,11 @@ Essential Commands – 25%
 
 Operation of Running Systems – 20%
 
-    Boot, reboot, and shut down a system safely
+#    Boot, reboot, and shut down a system safely
     Boot or change system into different operating modes
     Install, configure and troubleshoot bootloaders
-    Diagnose and manage processes
-    Locate and analyze system log files
+#    Diagnose and manage processes
+#    Locate and analyze system log files
 #    Schedule tasks to run at a set date and time
 #    Verify completion of scheduled jobs
 #    Update software to provide required functionality and security
@@ -38,7 +38,7 @@ Operation of Running Systems – 20%
     Use scripting to automate system maintenance tasks
     Manage the startup process and services (In Services Configuration)
     List and identify SELinux/AppArmor file and process contexts
-    Manage Software
+#    Manage Software
 #   Identify the component of a Linux distribution that a file belongs to
 
 User and Group Management – 10%
@@ -67,7 +67,7 @@ Service Configuration – 20%
 
 #    Configure a caching DNS server
 #    Maintain a DNS zone
-    Configure email aliases
+#    Configure email aliases
     Configure SSH servers and clients
     Restrict access to the HTTP proxy server (squid)
     Configure an IMAP and IMAPS service
@@ -82,11 +82,11 @@ Service Configuration – 20%
 Storage Management – 13%
 
 #    List, create, delete, and modify physical storage partitions
-    Manage and configure LVM storage
+#    Manage and configure LVM storage
     Create and configure encrypted storage
 #    Configure systems to mount file systems at or during boot
-    Configure and manage swap space
-    Create and manage RAID devices
+#    Configure and manage swap space
+#    Create and manage RAID devices
 #    Configure systems to mount file systems on demand
 #    Create, manage and diagnose advanced file system permissions
 #    Setup user and group disk quotas for filesystems
