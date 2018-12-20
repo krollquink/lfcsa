@@ -208,3 +208,57 @@ the higher the number the higher the utilization
 #### disable the swap 
 
 	swapoff /mnt/swap
+
+
+## Ecrypt disk!
+
+* To allow only trueste persons to access sensitive data
+
+* use **keys** to lock the access
+
+### How to Encrypt
+
+#### Make sure kernel support disk encryption
+
+	grep -i config_dm_crypt /boot/config-${uname -r}
+
+
+#### Install `cryptsetup`
+
+	sudo apt install cryptsetup
+
+#### Create Encrypted partition
+
+	cryptsetup -y luksFormat */dev/sdb1*
+
+and setup up passphrase
+
+#### To use `key file` to encrypt
+
+1. Create key-file `mykeys`
+
+	dd if=/dev/urandom of=~/mykeys bs=1024 count=2
+
+2. Create Encrypted partition using the key
+
+	cryptsetup luksFormat */dev/sdb1* 
+
+	
+
+
+
+#### To decrypt partition
+
+	cryptsetup luksOpen */dev/sdb1* *my_encryt*
+
+this will make the partition available in `/dev/mapper/my_encrypt`
+
+#### To encrypt partition
+
+	cryptsetup luksClose *my_encryt*
+
+
+
+
+
+	cryptsetup luksClose 
