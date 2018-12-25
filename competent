@@ -77,13 +77,13 @@ Service Configuration – 20%
     Configure a database server
 #    Restrict access to a web page
 @    Manage and configure containers
-    Manage and configure Virtual Machines
+#    Manage and configure Virtual Machines
 
 Storage Management – 13%
 
 #    List, create, delete, and modify physical storage partitions
 #    Manage and configure LVM storage
-    Create and configure encrypted storage
+#    Create and configure encrypted storage
 #    Configure systems to mount file systems at or during boot
 #    Configure and manage swap space
 #    Create and manage RAID devices

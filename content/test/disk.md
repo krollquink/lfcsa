@@ -243,9 +243,6 @@ and setup up passphrase
 
 	cryptsetup luksFormat */dev/sdb1* 
 
-	
-
-
 
 #### To decrypt partition
 
@@ -256,9 +253,5 @@ this will make the partition available in `/dev/mapper/my_encrypt`
 #### To encrypt partition
 
 	cryptsetup luksClose *my_encryt*
-
-
-
-
 
 	cryptsetup luksClose 
