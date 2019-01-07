@@ -57,7 +57,7 @@ Networking – 12% need to change to netplan
 #	need to change to netplan
 #    Configure network services to start automatically at boot
 #	need to change to netplan
-    Implement packet filtering
+#    Implement packet filtering
 #    Start, stop, and check the status of network services
 #    Statically route IP traffic
 #    Synchronize time using other network peers
@@ -69,7 +69,7 @@ Service Configuration – 20%
 #    Maintain a DNS zone
 #    Configure email aliases
     Configure SSH servers and clients
-    Restrict access to the HTTP proxy server (squid)
+#    Restrict access to the HTTP proxy server (squid)
     Configure an IMAP and IMAPS service
     Query and modify the behavior of system services at various operating modes
 #    Configure an HTTP server

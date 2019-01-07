@@ -143,5 +143,10 @@ match state of the packet
 	REDIRECT - redirect to a given port
 		--to-ports *ports*
 
+#### Example
 
+only allow HTTP and SSH
 
+	iptables -A -m tcp -p tcp --dport http -j ACCEPT
+	iptables -A -m tcp -p tcp --dport ssh -j ACCEPT
+	iptables -A -j DROP
